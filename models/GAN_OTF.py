@@ -767,6 +767,8 @@ class StyleGAN:
 
                     gan_input = torch.randn(images.shape[0], self.latent_size).to(self.device)
 
+                    gan_input = torch.zeros(images.shape[0], self.latent_size).to(self.device)
+
                     # optimize the discriminator:
                     dis_loss = self.optimize_discriminator(gan_input, images, current_depth, alpha, labels)
 

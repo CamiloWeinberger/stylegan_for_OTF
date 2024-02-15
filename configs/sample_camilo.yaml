@@ -8,4 +8,4 @@ dataset:
   folder: True
   resolution: 512
 sched:
-  epochs: [0,0,0,0,0,0,0,8]
+  epochs: [0,0,0,0,0,0,0,5]

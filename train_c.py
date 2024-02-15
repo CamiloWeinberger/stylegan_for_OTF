@@ -14,7 +14,7 @@ import shutil
 import torch
 from torch.backends import cudnn
 from Functions.loadData_numpy import Imgdataset
-from data import make_dataset
+#from data import make_dataset
 from models.GAN_OTF import StyleGAN
 from utils import (copy_files_and_create_dirs,
                    list_dir_recursively_with_ignore, make_logger)
@@ -144,7 +144,7 @@ data = DataLoader(dataset, batch_size=1, shuffle=True)
 for i, batch in enumerate(data, 1):
     images, labels = batch
 import matplotlib.pyplot as plt
-fake_samples = style_gan.gen(torch.zeros(1,512).cuda(), 7, 0.5, labels).detach()
+fake_samples = style_gan.gen(torch.randn(1,512).cuda(), 7, 0.5, labels).detach()
 fake_samples[:,2,:,:] = fake_samples[:,2,:,:]*0
 plt.imshow(fake_samples[0].permute(1, 2, 0).cpu().numpy())
 #plt.imshow(fake_samples[0,1,:,:].cpu().numpy(), cmap='gray')
